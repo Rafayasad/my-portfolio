@@ -10,24 +10,39 @@ type Slide = {
 const SLIDES: Slide[] = [
   {
     id: 1,
-    title: "EXPLORING PLANETS",
+    title: "DATA ABU-DHABI",
     description:
-      "Let me introduce you the marble planets with unique characteristics and features. The first planet has a red marble color, the second planet has a blue marble color, and the third planet has a yellow marble color.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=2400&auto=format&fit=crop&q=80",
+      "Data.Abudhabi is the official open data platform of the Government of Abu Dhabi, designed to provide transparent access to public datasets, analytics, and insights for citizens, businesses, and policymakers. The platform enables users to explore, visualize, and download data across sectors such as economy, health, education, and environment.",
+    img: "./p-one.jpg",
+    // prev: "",
   },
   {
     id: 2,
-    title: "ENTERPRISE SOLUTIONS",
+    title: "FIT & FIGHT",
     description:
-      "Building futuristic platforms that merge efficiency, real-time data and elegant design systems.",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=2400&auto=format&fit=crop&q=80",
+      "Fit & Fight is a fitness web-app portal built using Vite, React.js, TypeScript, and Node.js. Designed to deliver a dynamic and responsive user experience, the platform offers a comprehensive suite of features for fitness enthusiasts. Users can access personalized workout plans, track their progress, and connect with trainers through an intuitive interface.",
+    img: "./p-two.jpg",
   },
   {
     id: 3,
-    title: "AI & INNOVATION",
+    title: "GODIGGO",
     description:
-      "Harnessing generative AI to streamline workflows, surface insights, and elevate experiences.",
-    img: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=2400&auto=format&fit=crop&q=80",
+      "GoDiggo is a versatile online platform designed to revolutionize the way people in the UAE connect with local services and businesses. It allows users to easily discover, book, and manage a wide range of services, from home maintenance and cleaning to beauty and wellness.",
+    img: "p-three.jpg",
+  },
+  {
+    id: 3,
+    title: "TIPSTERS PRIME",
+    description:
+      "Tipsters Prime is an advanced betting app designed for enthusiasts looking to enhance their betting strategy with expert insights and predictions. The app offers a user-friendly interface for accessing betting tips, odds comparisons, and real-time updates on various sporting events. ",
+    img: "p-four.jpg",
+  },
+  {
+    id: 4,
+    title: "RENTO",
+    description:
+      "Tipsters Prime is an advanced betting app designed for enthusiasts looking to enhance their betting strategy with expert insights and predictions. The app offers a user-friendly interface for accessing betting tips, odds comparisons, and real-time updates on various sporting events. ",
+    img: "p-five.PNG",
   },
 ];
 
@@ -42,95 +57,130 @@ const ProjectsComponent: React.FC = () => {
   const s = SLIDES[i];
 
   return (
-    <section id="projects" className="relative w-full h-screen overflow-hidden">
-      {/* FULL IMAGE */}
+    <div className="mt-10">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
+      <div className="absolute top-20 left-5 sm:left-10 w-64 sm:w-96 h-64 sm:h-96 bg-neon-cyan/5 rounded-full blur-[100px] sm:blur-[120px] animate-pulse-glow"></div>
       <div
-        key={`bg-${s.id}-${i}`}
-        className="absolute inset-0 will-change-transform animate-imageIn"
-      >
-        <img
-          src={s.img}
-          alt={s.title}
-          className="w-full h-full object-cover"
-          /* subtle slow pan on each mount */
-          style={{
-            transform: "translateX(0)",
-            animation:
-              "kenLeft 3800ms cubic-bezier(.22,1,.36,1) both, fadeIn 900ms ease both",
-          }}
-        />
-        {/* bottom vignette for readability */}
-        <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_100%,rgba(0,0,0,.55),transparent_55%)] pointer-events-none" />
+        className="absolute bottom-20 right-5 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-neon-magenta/5 rounded-full blur-[100px] sm:blur-[120px] animate-pulse-glow"
+        style={{ animationDelay: "1s" }}
+      ></div>
+      <div className="text-center mb-12 sm:mb-16 animate-slide-up px-2">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          Featured Projects
+        </h2>
+        <div className="w-20 h-1 mx-auto rounded-full bg-gradient-to-r from-neon-cyan via-neon-magenta to-neon-cyan bg-[length:200%_100%] animate-gradient-shift"></div>
+        <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm sm:text-base">
+          Showcasing some of my recent work and contributions
+        </p>
       </div>
-
-      {/* BLURRED TEXT PANEL (full height + some width) */}
-      <div
-        className="absolute left-16 top-0 h-full w-[min(680px,46vw)] z-10"
-        /* glass + gradient aura like your reference */
+      <section
+        id="projects"
+        className="relative w-full h-screen overflow-hidden"
       >
+        {/* FULL IMAGE */}
         <div
-          className="absolute inset-0 rounded-none backdrop-blur-[5px]"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(15,18,28,.72), rgba(14,16,24,.65))",
-            borderRight: "1px solid hsl(var(--border) / .55)",
-            boxShadow:
-              "inset -60px 0 120px -60px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.02)",
-          }}
-        />
-        {/* soft neon aura brush on the seam */}
+          key={`bg-${s.id}-${i}`}
+          className="absolute inset-0 will-change-transform animate-imageIn"
+        >
+          <img
+            src={s.img}
+            alt={s.title}
+            className="w-full h-full object-cover"
+            /* subtle slow pan on each mount */
+            style={{
+              transform: "translateX(0)",
+              animation:
+                "kenLeft 3800ms cubic-bezier(.22,1,.36,1) both, fadeIn 900ms ease both",
+            }}
+          />
+          {/* bottom vignette for readability */}
+          <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_100%,rgba(0,0,0,.55),transparent_55%)] pointer-events-none" />
+        </div>
+
+        {/* BLURRED TEXT PANEL (full height + some width) */}
         <div
-          className="absolute top-0 right-[-1px] h-full w-24 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,0))",
-            boxShadow:
-              "0 0 24px hsl(var(--neon-cyan) / .25), 0 0 30px hsl(var(--neon-magenta) / .18)",
-            opacity: 0.35,
-          }}
-        />
-      </div>
+          className="absolute left-16 top-0 h-full w-[min(680px,46vw)] z-10"
+          /* glass + gradient aura like your reference */
+        >
+          <div
+            className="absolute inset-0 rounded-none backdrop-blur-[5px]"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(15,18,28,.72), rgba(14,16,24,.65))",
+              borderRight: "1px solid hsl(var(--border) / .55)",
+              boxShadow:
+                "inset -60px 0 120px -60px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.02)",
+            }}
+          />
+          {/* soft neon aura brush on the seam */}
+          <div
+            className="absolute top-0 right-[-1px] h-full w-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,0))",
+              boxShadow:
+                "0 0 24px hsl(var(--neon-cyan) / .25), 0 0 30px hsl(var(--neon-magenta) / .18)",
+              opacity: 0.35,
+            }}
+          />
+        </div>
 
-      {/* TEXT CONTENT */}
-      <div className="absolute inset-y-0 left-0 z-20 flex items-center">
-        <div className="px-6 sm:px-10 md:px-12 lg:pl-16 xl:pl-20 pr-8 max-w-[680px]">
-          {/* pagination */}
-          <div className="mb-8 flex items-center gap-3 text-[12px] tracking-[0.25em] text-white/70">
-            <span>{String(i + 1).padStart(2, "0")}</span>
-            <span className="h-px w-24 bg-white/35" />
-            <span>{String(SLIDES.length).padStart(2, "0")}</span>
-          </div>
+        {/* TEXT CONTENT */}
+        <div className="absolute inset-y-0 left-0 z-20 flex items-center">
+          <div className="px-6 sm:px-10 md:px-12 lg:pl-16 xl:pl-20 pr-8 max-w-[680px]">
+            {/* pagination */}
+            <div className="mb-8 flex items-center gap-3 text-[12px] tracking-[0.25em] text-white/70">
+              <span>{String(i + 1).padStart(2, "0")}</span>
+              <span className="h-px w-24 bg-white/35" />
+              <span>{String(SLIDES.length).padStart(2, "0")}</span>
+            </div>
 
-          <h1
-            key={`t-${s.id}-${i}`}
-            className="uppercase font-bold leading-[0.92]
+            <h1
+              key={`t-${s.id}-${i}`}
+              className="uppercase font-bold leading-[0.92]
                        text-5xl sm:text-3xl md:text-7xl xl:text-8xl
                        will-change-transform animate-textIn bg-gradient-to-r from-[hsl(var(--neon-cyan))] via-[hsl(var(--pastel-pink))] to-[hsl(var(--neon-magenta))] bg-clip-text text-transparent"
-            // style={{ fontFamily: "var(--font-head)" }}
-          >
-            {s.title}
-          </h1>
+              // style={{ fontFamily: "var(--font-head)" }}
+            >
+              {s.title}
+            </h1>
 
-          <p
-            key={`d-${s.id}-${i}`}
-            className="mt-6 text-white/85 max-w-[48ch]
+            <p
+              key={`d-${s.id}-${i}`}
+              className="mt-6 text-white/85 max-w-[48ch]
                        text-sm sm:text-base md:text-lg leading-relaxed
                        will-change-transform animate-descIn"
-            // style={{ fontFamily: "var(--font-body)" }}
-          >
-            {s.description}
-          </p>
+              // style={{ fontFamily: "var(--font-body)" }}
+            >
+              {s.description}
+            </p>
+            <div className="flex my-4">
+              <div className="bg-card/80 backdrop-blur-sm px-3 py-2 sm:px-6 sm:py-3 rounded-full shadow-lg border border-primary/20">
+                <div
+                  className="flex items-center gap-2 cursor-pointer"
+                  // onClick={() => scrollToSection("contact")}
+                >
+                  <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-primary"></span>
+                  </span>
+                  <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-neon-cyan to-primary bg-clip-text text-transparent whitespace-nowrap">
+                    Preview
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* MINIMAL ARROWS — like your screenshot */}
-      <div className="absolute bottom-8 left-10 right-10 sm:left-20 sm:right-20 z-30 flex items-center justify-start gap-4">
-        <ArrowLine onClick={prev} dir="left" />
-        <ArrowLine onClick={next} dir="right" />
-      </div>
+        {/* MINIMAL ARROWS — like your screenshot */}
+        <div className="absolute bottom-8 left-10 right-10 sm:left-20 sm:right-20 z-30 flex items-center justify-start gap-4">
+          <ArrowLine onClick={prev} dir="left" />
+          <ArrowLine onClick={next} dir="right" />
+        </div>
 
-      {/* KEYFRAMES + ARROW CSS */}
-      <style>{`
+        {/* KEYFRAMES + ARROW CSS */}
+        <style>{`
         /* slow, smooth enter from left */
         @keyframes imageIn {
           0% { opacity: 0; transform: translateX(40px) }
@@ -194,7 +244,8 @@ const ProjectsComponent: React.FC = () => {
           .arrow-btn .head  { border-top-width: 5px; border-bottom-width: 5px; }
         }
       `}</style>
-    </section>
+      </section>
+    </div>
   );
 };
 
