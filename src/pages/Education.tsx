@@ -36,37 +36,30 @@ interface EducationMilestone {
 
 const educationJourney: EducationMilestone[] = [
   {
-    year: "2020 - 2024",
+    year: "2019 - 2023",
     title: "Bachelor's Degree",
-    institution: "NED University of Engineering & Technology",
+    institution: "Sir Syed University of Engineering & Technology",
     location: "Karachi, Pakistan",
-    degree: "BS Computer Science",
-    gpa: "3.8/4.0",
+    degree: "BS Software Engineering",
+    gpa: "3.34/4.0",
     description:
-      "Embarked on my professional journey in Computer Science, specializing in AI/ML, Full-Stack Development, and Cloud Architecture. Built a strong foundation in algorithms, data structures, and modern software engineering practices.",
+      "On my professional journey in Software Engineering, specializing in AI/ML, Full-Stack Development, and Cloud Architecture. Built a strong foundation in algorithms, data structures, and modern software engineering practices.",
     achievements: [
-      "Dean's List for 4 consecutive semesters",
-      "President of Tech Society (2023-24)",
-      "Led team to win National Hackathon 2023",
+      "Class Representative List for 8 consecutive semesters",
+      "Top Position in Tech Lab (2020-21)",
+      "Led team to create Final Year Thesis 2022 - 2023",
       "Published research paper on AI-driven analytics",
     ],
-    skills: [
-      "React",
-      "Node.js",
-      "Python",
-      "Machine Learning",
-      "Cloud Computing",
-      "PostgreSQL",
-    ],
+    skills: [],
     image: "./myimgtwo.jpg",
     color: "cyan",
     removeBlackBg: true,
   },
   {
-    year: "2023 - 2024",
+    year: "2022",
     title: "Professional Certificate",
-    institution: "Meta (Facebook)",
-    location: "Online - Coursera",
+    institution: "Udemy",
+    location: "Online",
     degree: "Advanced React & Frontend Architecture",
     description:
       "Mastered advanced React patterns, TypeScript, performance optimization, and modern design systems. Focused on building scalable, maintainable, and accessible web applications.",
@@ -89,43 +82,39 @@ const educationJourney: EducationMilestone[] = [
     color: "blue",
   },
   {
-    year: "2022 - 2023",
-    title: "Full-Stack Specialization",
-    institution: "freeCodeCamp & Udemy",
-    location: "Self-Paced Learning",
-    degree: "MERN Stack Development",
+    year: "2021",
+    title: "Mern Stack Specialization",
+    institution: "Expertizo",
+    location: "On-site Learning",
+    degree: "Web and App Development",
     description:
-      "Intensive self-driven learning journey covering the complete MERN stack, DevOps fundamentals, and agile methodologies. Built 12+ full-stack applications from scratch.",
+      "Intensive self-driven learning journey covering the complete MERN stack, and agile methodologies. Built 12+ full-stack applications from scratch.",
     achievements: [
-      "Earned 5 industry certifications",
+      "Earned industry certification",
       "Contributed to 3 open-source projects",
-      "Built personal SaaS product with 200+ users",
-      "Mastered Docker & CI/CD pipelines",
     ],
-    skills: ["MongoDB", "Express", "Node.js", "Docker", "AWS", "GraphQL"],
+    skills: ["MongoDB", "Express", "Node.js", "React.js", "Bootstrape CSS"],
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80",
-    color: "magenta",
+    color: "blue",
   },
   {
-    year: "2018 - 2020",
+    year: "2017 - 2019",
     title: "Foundation Years",
-    institution: "Adamjee Govt. Science College",
+    institution: "Jinnah Govt. College",
     location: "Karachi, Pakistan",
     degree: "Intermediate - Pre-Engineering",
     gpa: "85%",
     description:
       "Built a solid foundation in Mathematics, Physics, and Computer Science. Started competitive programming and won district-level science olympiad.",
     achievements: [
-      "District Science Olympiad Winner",
       "Started competitive coding journey",
-      "Participated in 5+ coding competitions",
       "Built first web application",
     ],
-    skills: ["C++", "Mathematics", "Physics", "Problem Solving", "Algorithms"],
+    skills: ["Mathematics", "Physics", "Problem Solving", "Algorithms"],
     image:
       "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1200&auto=format&fit=crop&q=80",
-    color: "pink",
+    color: "blue",
   },
 ];
 
@@ -359,7 +348,7 @@ const GraduationHero: React.FC<{ item: EducationMilestone }> = ({ item }) => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.35, delay: 0.12 }}
-              className={`absolute top-5 right-5 px-4 py-2 rounded-full backdrop-blur-md border ${styles.border}`}
+              className={`absolute top-5 right-5 px-4 py-2 rounded-full backdrop-blur-md bg-background/70 border ${styles.border}`}
             >
               <div className="flex items-center gap-2 text-sm">
                 <Calendar className="w-4 h-4" />

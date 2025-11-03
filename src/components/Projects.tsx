@@ -5,6 +5,7 @@ type Slide = {
   title: string;
   description: string;
   img: string;
+  prev: string;
 };
 
 const SLIDES: Slide[] = [
@@ -14,7 +15,7 @@ const SLIDES: Slide[] = [
     description:
       "Data.Abudhabi is the official open data platform of the Government of Abu Dhabi, designed to provide transparent access to public datasets, analytics, and insights for citizens, businesses, and policymakers. The platform enables users to explore, visualize, and download data across sectors such as economy, health, education, and environment.",
     img: "./p-one.jpg",
-    // prev: "",
+    prev: "https://data.abudhabi/",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const SLIDES: Slide[] = [
     description:
       "Fit & Fight is a fitness web-app portal built using Vite, React.js, TypeScript, and Node.js. Designed to deliver a dynamic and responsive user experience, the platform offers a comprehensive suite of features for fitness enthusiasts. Users can access personalized workout plans, track their progress, and connect with trainers through an intuitive interface.",
     img: "./p-two.jpg",
+    prev: "https://fitandfight.urapptech.com/",
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const SLIDES: Slide[] = [
     description:
       "GoDiggo is a versatile online platform designed to revolutionize the way people in the UAE connect with local services and businesses. It allows users to easily discover, book, and manage a wide range of services, from home maintenance and cleaning to beauty and wellness.",
     img: "p-three.jpg",
+    prev: "https://godiggo.com/ae-en",
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ const SLIDES: Slide[] = [
     description:
       "Tipsters Prime is an advanced betting app designed for enthusiasts looking to enhance their betting strategy with expert insights and predictions. The app offers a user-friendly interface for accessing betting tips, odds comparisons, and real-time updates on various sporting events. ",
     img: "p-four.jpg",
+    prev: "https://mmcgbl.com/project/tipster-prime-app/",
   },
   {
     id: 4,
@@ -43,12 +47,20 @@ const SLIDES: Slide[] = [
     description:
       "Tipsters Prime is an advanced betting app designed for enthusiasts looking to enhance their betting strategy with expert insights and predictions. The app offers a user-friendly interface for accessing betting tips, odds comparisons, and real-time updates on various sporting events. ",
     img: "p-five.PNG",
+    prev: "https://rento.online/",
   },
 ];
 
 function cn(...c: (string | false | null | undefined)[]) {
   return c.filter(Boolean).join(" ");
 }
+
+const onPrev = (href?: string) => {
+  if (!href) return;
+  // ensure absolute URL
+  const url = /^https?:\/\//i.test(href) ? href : `https://${href}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 
 const ProjectsComponent: React.FC = () => {
   const [i, setI] = useState(0);
@@ -164,7 +176,15 @@ const ProjectsComponent: React.FC = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-primary"></span>
                   </span>
-                  <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-neon-cyan to-primary bg-clip-text text-transparent whitespace-nowrap">
+                  <span
+                    onClick={() => onPrev(s.prev)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) =>
+                      (e.key === "Enter" || e.key === " ") && onPrev(s.prev)
+                    }
+                    className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-neon-cyan to-primary bg-clip-text text-transparent whitespace-nowrap"
+                  >
                     Preview
                   </span>
                 </div>

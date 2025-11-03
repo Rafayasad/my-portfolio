@@ -3,8 +3,9 @@ import { Experience } from "@/components/Experience";
 import { Skills } from "@/components/Skills";
 import Projects from "@/components/Projects";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import ClientGlobe from "@/components/ClientGlobe";
+// import { Footer } from "@/components/Footer";
+// import ClientGlobe from "@/components/ClientGlobe";
+// import BookingSection from "@/components/BookingSection";
 
 const Index = () => {
   return (
@@ -13,9 +14,8 @@ const Index = () => {
       <Experience />
       <Skills />
       <Projects />
-      {/* <ClientGlobe /> */}
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
